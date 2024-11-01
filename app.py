@@ -4,7 +4,7 @@ from src.commands import commands_router
 from src.handlers.user import user_router
 
 
-bot = Bot("")
+bot = Bot("7669843926:AAEcYM8xDr_LFRuLYASOyRXxv8JFc0jfKgc")
 dp = Dispatcher()
 
 dp.include_router(commands_router)
