@@ -5,7 +5,7 @@ start_menu = ReplyKeyboardBuilder()
 start_menu.add(
     KeyboardButton(text="Подробнее об ассистенте"),
     KeyboardButton(text="Тарифы"),
-    KeyboardButton(text="Присоединиться к организации")
+    KeyboardButton(text="Вступить в организацию")
 )
 start_menu.adjust(1)
 
@@ -41,4 +41,9 @@ menu_employe.add(
 menu_guild = ReplyKeyboardBuilder()
 menu_guild.add(
     KeyboardButton(text="Рейтинг сотрудников")    
+)
+
+cancel_menu = ReplyKeyboardBuilder()
+cancel_menu.add(
+    KeyboardButton(text="Отмена")
 )

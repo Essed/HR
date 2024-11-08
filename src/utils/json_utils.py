@@ -8,7 +8,6 @@ async def add_data_to_json(data, filename):
     json_data.append(data)
     await write_data_to_json_as_list(json_data, filename)
 
-
 async def read_data_from_json_as_list(filename) -> list[dict]:
     data = list()
     if os.path.exists(filename):
@@ -18,7 +17,13 @@ async def read_data_from_json_as_list(filename) -> list[dict]:
     return data
 
 
-async def write_data_to_json_as_list(data, filename) -> list[dict]:
+async def write_data_to_json_as_list(data: dict, filename):
     async with aiofiles.open(filename, 'w', encoding='utf-8') as file:
         json_list: list = json.dumps(data, ensure_ascii=False, indent=4) 
         await file.write(json_list)
+ 
+
+async def clear_data(filename):
+    if os.path.exists(filename):
+        async with aiofiles.open(filename, 'w', encoding='utf-8') as file:
+            await file.truncate(0)
